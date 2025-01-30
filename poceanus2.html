@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocenanosa Saygı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 50px;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .button {
+            font-size: 20px;
+            padding: 15px 30px;
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Sitemize Hoşgeldiniz !!</h1>
+        <p>Devam etmek ister misiniz?</p>
+        <button class="button" onclick="startDownload()">Evet</button>
+    </div>
+
+    <script>
+        function startDownload() {
+            // Kullanıcı "Evet" butonuna tıkladığında, boş bir .html dosyası indirilecek
+            var blob = new Blob(["<!DOCTYPE html>\n<html lang='tr'>\n<head>\n    <meta charset='UTF-8'>\n    <title>Boş HTML Dosyası</title>\n</head>\n<body>\n    <!-- Bu dosya tamamen boş -->\n</body>\n</html>"], { type: 'text/html' });
+
+            // Dosyanın adını "Hacked.html" olarak belirliyoruz
+            var link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'simdiyarragıyedin.html';  // Burada dosya adı değiştirildi
+
+            // Dosya indirilmeye başlıyor
+            link.click();
+        }
+    </script>
+</body>
+</html>
